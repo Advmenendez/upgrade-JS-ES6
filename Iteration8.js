@@ -11,3 +11,15 @@ const videogames = [
     {name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5},
     {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG', 'La cosa más puto bonita que he visto nunca'], score: 10},
 ]
+
+let rpgFilter= videogames.filter((videogame)=>{
+    if(videogame.genders.includes("RPG"))
+    return videogame
+
+})
+let rpgScore = rpgFilter.reduce((sum, game) => {
+    return (sum += game.score);
+}, 0);
+
+console.log(rpgFilter)
+console.log(rpgScore)
